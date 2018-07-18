@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    width: 75vw;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+tr {
+    transition: background 0.25s;
+}
+
+tr:hover {
+    cursor: pointer;
+    background: #ede7f6;
+}
+
+fieldset legend {
+    color: #311b92;
+}

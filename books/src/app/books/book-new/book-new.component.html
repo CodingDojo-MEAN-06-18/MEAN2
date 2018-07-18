@@ -5,28 +5,28 @@
     {{ bookForm.value | json }}
 
     <form (submit)='onSubmit($event, bookForm)' #bookForm='ngForm'>
-      <div>
+      <div class="input-field">
         <label for="">title</label>
         <input type="text" name='title' [(ngModel)]='book.title' required>
       </div>
-      <div>
+      <div class="input-field">
         <label for="">author</label>
         <input type="text" name='author' [(ngModel)]='book.author'>
       </div>
-      <div>
+      <div class="input-field">
         <label for="">pages</label>
         <input type="number" name='pages' [(ngModel)]='book.pages'>
       </div>
-      <div>
+      <div class="input-field">
         <label for="">year</label>
         <input type="number" name='year' [(ngModel)]='book.year'>
       </div>
-      <div>
+      <div class="input-field">
         <label for="">publisher</label>
         <input type="text" name='publisher' [(ngModel)]='book.publisher'>
       </div>
 
-      <button *ngIf='bookForm.valid'>Submit</button>
+      <button *ngIf='bookForm.valid' class="waves-effect waves-light btn-large deep-purple accent-1">Submit</button>
     </form>
   </fieldset>
 </section>

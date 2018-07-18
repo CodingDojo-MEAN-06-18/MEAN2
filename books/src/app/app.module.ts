@@ -5,9 +5,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import * as fromBooks from './books';
+import { TitlePipe } from './pipes';
 
 @NgModule({
-  declarations: [AppComponent, ...fromBooks.components],
+  declarations: [AppComponent, TitlePipe, ...fromBooks.components],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

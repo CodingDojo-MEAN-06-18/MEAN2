@@ -1,0 +1,1 @@
+export { TitlePipe } from './title.pipe';
