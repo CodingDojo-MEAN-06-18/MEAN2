@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import * as fromBooks from './books';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ...fromBooks.components],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,26 @@
+<app-book-new (newBook)='onCreate($event)'></app-book-new>
+
+
+<section>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year</th>
+      <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor='let book of books' (click)='onSelect(book)'>
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td>Future Actions</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<app-book-details [book]='selectedBook'></app-book-details>
