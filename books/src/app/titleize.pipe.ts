@@ -7,7 +7,7 @@ export class TitleizePipe implements PipeTransform {
   static skipWords = ['of', 'the', 'in', 'a', 'or'];
 
   transform(title: string, args?: string[] | boolean): string {
-    console.log('running pipe', title, args);
+    // console.log('running pipe', title, args);
 
     if (typeof title !== 'string') {
       return title;
@@ -17,8 +17,8 @@ export class TitleizePipe implements PipeTransform {
     const processSkipwords = args !== false;
 
     return title.replace(/\w[^-\s]*/g, (word, index: number) => {
-      console.log(index);
-      console.log(word);
+      // console.log(index);
+      // console.log(word);
       if (processSkipwords && index && skipWords.includes(word.toLowerCase())) {
         return word.toLowerCase();
       }
