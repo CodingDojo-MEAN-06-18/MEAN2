@@ -5,6 +5,8 @@ import { environment } from '../environments/environment';
 
 import * as fromBooks from './books';
 
+const enableTracing = true && !environment.production;
+
 const routes: Routes = [
   {
     path: '',
@@ -36,7 +38,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      enableTracing: !environment.production,
+      enableTracing,
     }),
   ],
   exports: [RouterModule],

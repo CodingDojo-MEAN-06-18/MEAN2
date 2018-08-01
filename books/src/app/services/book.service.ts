@@ -10,7 +10,8 @@ import { of, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookService {
-  private base = 'http://59498bce6d49df0011102cfc.mockapi.io/books';
+  // private base = 'http://59498bce6d49df0011102cfc.mockapi.io/books';
+  private base = '/api/books';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +29,7 @@ export class BookService {
     return this.http.post<Book>(this.base, book);
   }
 
-  deleteBook(id: number): Observable<Book> {
+  deleteBook(id: string): Observable<Book> {
     return this.http.delete<Book>(`${this.base}/${id}`);
   }
 }

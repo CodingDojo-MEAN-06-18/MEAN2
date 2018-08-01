@@ -1,0 +1,2 @@
+angular: ng serve --proxy-config proxy.config.json --open --port 7200
+express: nodemon
