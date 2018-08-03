@@ -7,11 +7,12 @@ import * as fromBooks from './books';
 
 const enableTracing = true && !environment.production;
 
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'books',
-    pathMatch: 'full',
+    component: HomeComponent,
   },
 
   {

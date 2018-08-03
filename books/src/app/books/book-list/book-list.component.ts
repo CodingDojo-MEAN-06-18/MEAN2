@@ -21,7 +21,6 @@ import { BookService } from '../../services/';
 })
 export class BookListComponent implements OnInit {
   books: Array<Book> = [];
-  books$: Observable<Book[]>;
   selectedBook: Book;
   errorMessage: string;
 
@@ -33,15 +32,14 @@ export class BookListComponent implements OnInit {
   ngOnInit() {
     // console.log(this.bookService);
 
-    this.books$ = this.bookService.getBooks().pipe(
-      tap(books => {
-        books.forEach(book => {
-          // console.log('booking ', this.titleize);
+    this.bookService.getBooks().subscribe(books => {
+      this.books = books;
+      this.books.forEach(book => {
+        // console.log('booking ', this.titleize);
 
-          book.author = this.titleize.transform(book.author);
-        });
-      })
-    );
+        book.author = this.titleize.transform(book.author);
+      });
+    });
     // this.bookService.getBooks().subscribe(books => {
     //   console.log('got books?', books);
     //   this.books = books;
